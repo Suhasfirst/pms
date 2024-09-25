@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const Product = require('./model/product.model.js')
 const productRoute = require('./routes/product.route.js')
 const app = express()
+const port = 4000;
 
 // ** EXPRESS MIDDLEWARE
 app.use(express.json())
@@ -18,7 +19,7 @@ app.get('/', (req, res) => {
 mongoose.connect('mongodb+srv://suhasmaverick:1LKJxXh84xYs6e15@pms.drciu.mongodb.net/?retryWrites=true&w=majority&appName=pms')
     .then(() => {
         console.log('Connected!')
-        app.listen(3000, () => {
+        app.listen(port, () => {
             console.log('Node js servrerr')
         })
     })
