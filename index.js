@@ -1,9 +1,11 @@
+require('dotenv').config()
+
 const express = require('express')
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 const Product = require('./model/product.model.js')
 const productRoute = require('./routes/product.route.js')
 const app = express()
-const port = 4000;
+const port = process.env.PORT
 
 // ** EXPRESS MIDDLEWARE
 app.use(express.json())
