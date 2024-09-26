@@ -17,6 +17,7 @@ const limiter = rateLimit({
 });
 
 // ** EXPRESS MIDDLEWARE
+app.use(limiter);
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
@@ -31,7 +32,7 @@ mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log('Connected!')
         app.listen(port, () => {
-            console.log('Node js servrerr')
+            console.log('Node js servrer')
         })
     })
     .catch(() => { console.log('Failed') })
