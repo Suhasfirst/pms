@@ -6,7 +6,7 @@ const Product = require('./model/product.model.js')
 const productRoute = require('./routes/product.route.js')
 const rateLimit = require('express-rate-limit');
 const app = express()
-const port = process.env.PORT
+const port = process.env.PORT 
 
 
 // Apply rate limiting to all requests
@@ -32,7 +32,7 @@ mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log('Connected!')
         app.listen(port, () => {
-            console.log('Node js servrer')
+            console.log('Node js servrer', port)
         })
     })
     .catch(() => { console.log('Failed') })
